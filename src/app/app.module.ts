@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
+import { AuthorizationService } from '../services/auth/auth';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -30,6 +31,6 @@ export const firebaseConfig = {
     HomePage,
     LoginPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthorizationService]
 })
 export class AppModule {}
