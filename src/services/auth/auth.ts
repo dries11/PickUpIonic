@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import firebase from 'firebase';
 
 @Injectable()
@@ -31,3 +30,4 @@ export class AuthData {
         return this.fireAuthentication.signOut();
     }
 }
+
