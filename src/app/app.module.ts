@@ -4,7 +4,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
 import { SignUpPage } from '../pages/auth/signup/signup';
-
+import { FacebookAuth } from '../services/auth/facebook';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
@@ -33,6 +33,6 @@ export const firebaseConfig = {
     LoginPage,
     SignUpPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth]
 })
 export class AppModule {}

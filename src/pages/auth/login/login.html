@@ -33,11 +33,16 @@
 	<div padding>
         <ion-row>
         <ion-col width-50>
-		<button width  ion-button block round color="dark"[navPush]= "homePage">LOGIN</button>
+		<button width  ion-button full round color="dark"[navPush]= "homePage">Login</button>
         </ion-col>
         <ion-col width-50>
-         <button ion-button block round color = "dark"[navPush]="signUpPage">Sign Up</button>
+         <button ion-button full round color = "dark"[navPush]="signUpPage">Sign Up</button>
         </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-right full round color="primary" (click)="loginWithFacebook()">Login With Facebook</button>
+            </ion-col>
         </ion-row>
 	</div>
 </ion-content>
