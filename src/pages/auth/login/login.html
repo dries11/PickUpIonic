@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content padding>
+    
     <p class="center">
 		<ion-icon class="large lighter" primary name="contact"></ion-icon>
     </p>
@@ -26,12 +27,19 @@
             <ion-item *ngIf = "!loginUserNameForm.controls.password.valid &&(loginUserNameForm.controls.username.dirty || submitAttempt)">
             <p> Please enter a valid password </p>
 		</ion-item>
-	</ion-list>
+    </ion-list>
+    </form>
 
 	<div padding>
-		<button ion-button block round color="dark">LOGIN</button>
+        <ion-row>
+        <ion-col width-50>
+		<button width  ion-button block round color="dark"[navPush]= "homePage">LOGIN</button>
+        </ion-col>
+        <ion-col width-50>
+         <button ion-button block round color = "dark"[navPush]="signUpPage">Sign Up</button>
+        </ion-col>
+        </ion-row>
 	</div>
-	</form>
 </ion-content>
             
             
