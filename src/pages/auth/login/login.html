@@ -14,17 +14,17 @@
     <form [formGroup]="loginUserNameForm">
 	<ion-list>
 		<ion-item>
-			<ion-label floating>Username</ion-label>
-			<ion-input  formControlName="username" type="text"[class.invalid]="!loginUserNameForm.controls.username.valid &&(loginUserNameForm.controls.username.dirty|| submitAttempt)" ></ion-input>
+			<ion-label floating>Email</ion-label>
+			<ion-input  formControlName="email" type="text"[class.invalid]="!loginUserNameForm.controls.email.valid &&(loginUserNameForm.controls.email.dirty|| submitAttempt)" ></ion-input>
         </ion-item>
-        <ion-item *ngIf = "!loginUserNameForm.controls.username.valid &&(loginUserNameForm.controls.username.dirty|| submitAttempt)">
-            <p> Please enter a valid Username</p>
+        <ion-item *ngIf = "!loginUserNameForm.controls.email.valid &&(loginUserNameForm.controls.email.dirty|| submitAttempt)">
+            <p> Please enter a valid Email</p>
         </ion-item>
 			<ion-item>
             <ion-label floating>Password</ion-label>
-			<ion-input formControlName="password" type="text"[class.invalid]="!loginUserNameForm.controls.password.valid &&(loginUserNameForm.controls.username.dirty || submitAttempt)"></ion-input>
+			<ion-input formControlName="password" type="text"[class.invalid]="!loginUserNameForm.controls.password.valid &&(loginUserNameForm.controls.password.dirty || submitAttempt)"></ion-input>
 			</ion-item>
-            <ion-item *ngIf = "!loginUserNameForm.controls.password.valid &&(loginUserNameForm.controls.username.dirty || submitAttempt)">
+            <ion-item *ngIf = "!loginUserNameForm.controls.password.valid &&(loginUserNameForm.controls.password.dirty || submitAttempt)">
             <p> Please enter a valid password </p>
 		</ion-item>
     </ion-list>
@@ -32,12 +32,17 @@
 
 	<div padding>
         <ion-row>
-        <ion-col width-50>
-		<button width  ion-button full round color="dark"[navPush]= "homePage">Login</button>
-        </ion-col>
-        <ion-col width-50>
-         <button ion-button full round color = "dark"[navPush]="signUpPage">Sign Up</button>
-        </ion-col>
+            <ion-col width-100>
+                <button  ion-button full round color ="dark"clear [navPush] ="forgotPasswordPage">Forgot Password</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50>
+		        <button ion-button full round color="dark"[navPush]= "homePage">Login</button>
+            </ion-col>
+            <ion-col width-50>
+                <button ion-button full round color = "dark"[navPush]="signUpPage">Sign Up</button>
+            </ion-col>
         </ion-row>
         <ion-row>
             <ion-col>

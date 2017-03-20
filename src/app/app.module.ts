@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
 import { SignUpPage } from '../pages/auth/signup/signup';
 import { FacebookAuth } from '../services/auth/facebook';
+import { ForgotPasswordPage } from '../pages/auth/forgotpass/forgotpass';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
@@ -21,6 +22,8 @@ export const firebaseConfig = {
     HomePage,
     LoginPage,
     SignUpPage,
+    ForgotPasswordPage
+    
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -31,7 +34,9 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     LoginPage,
-    SignUpPage
+    SignUpPage,
+    ForgotPasswordPage
+   
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth]
 })
