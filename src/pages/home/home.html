@@ -1,9 +1,21 @@
 <ion-header>
   <ion-navbar color="dark">
     <ion-title>
-      PickUp HomePage
+      PickUp
     </ion-title>
+    <ion-buttons start>
+      <button ion-button clear icon-only>
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button clear icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
+<ion-content padding>
+  <button ion-button color="danger" (click)="logoutUser()">Logout</button>
+</ion-content>

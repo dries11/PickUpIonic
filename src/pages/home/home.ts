@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { AuthData } from '../../services/auth/auth';
 
+import { LoginPage } from '../auth/login/login';
 
 @Component({
   selector: 'page-home',
@@ -9,9 +11,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public authData:AuthData) {
   
 
+  }
+
+  logoutUser(){
+    this.authData.logoutUser();
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

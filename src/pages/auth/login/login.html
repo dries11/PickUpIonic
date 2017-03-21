@@ -12,28 +12,28 @@
 		<ion-icon class="large lighter" primary name="contact"></ion-icon>
     </p>
     <form [formGroup]="loginEmailForm">
-	<ion-list>
-		<ion-item>
-			<ion-label floating>Email</ion-label>
-			<ion-input  formControlName="email" type="text"[class.invalid]="!loginEmailForm.controls.email.valid &&(loginEmailForm.controls.email.dirty|| submitAttempt)" ></ion-input>
-        </ion-item>
-        <ion-item *ngIf = "!loginEmailForm.controls.email.valid &&(loginEmailForm.controls.email.dirty|| submitAttempt)">
-            <p> Please enter a valid Email</p>
-        </ion-item>
+	    <ion-list>
+		    <ion-item>
+			    <ion-label floating>Email</ion-label>
+			    <ion-input formControlName="email" type="email"[class.invalid]="!loginEmailForm.controls.email.valid &&(loginEmailForm.controls.email.dirty || submitAttempt)" ></ion-input>
+            </ion-item>
+            <ion-item *ngIf ="!loginEmailForm.controls.email.valid && (loginEmailForm.controls.email.dirty || submitAttempt)">
+                <p> Please enter a valid Email</p>
+            </ion-item>
 			<ion-item>
-            <ion-label floating>Password</ion-label>
-			<ion-input formControlName="password" type="text"[class.invalid]="!loginEmailForm.controls.password.valid &&(loginEmailForm.controls.password.dirty || submitAttempt)"></ion-input>
+                <ion-label floating>Password</ion-label>
+			    <ion-input formControlName="password" type="password"[class.invalid]="!loginEmailForm.controls.password.valid &&(loginEmailForm.controls.password.dirty || submitAttempt)"></ion-input>
 			</ion-item>
-            <ion-item *ngIf = "!loginEmailForm.controls.password.valid &&(loginEmailForm.controls.password.dirty || submitAttempt)">
+            <ion-item *ngIf ="!loginEmailForm.controls.password.valid && (loginEmailForm.controls.password.dirty || submitAttempt)">
             <p> Please enter a valid password </p>
-		</ion-item>
-    </ion-list>
+		    </ion-item>
+        </ion-list>
     </form>
 
 	<div padding>
         <ion-row>
             <ion-col width-50>
-		        <button ion-button full round color="dark" [navPush]="homePage">Login</button>
+		        <button ion-button full round color="dark" (click)="onSubmit()">Login</button>
             </ion-col>
             <ion-col width-50>
                 <button ion-button full round color = "dark" (click)="goToSignUpPage()">Sign Up</button>

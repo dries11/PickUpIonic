@@ -1,10 +1,13 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
 import { SignUpPage } from '../pages/auth/signup/signup';
 import { ForgotPasswordPage } from '../pages/auth/forgotpassword/forgotpassword';
+
+import { AuthData } from '../services/auth/auth';
 import { FacebookAuth } from '../services/auth/facebook';
 import { AngularFireModule } from 'angularfire2';
 
@@ -38,6 +41,6 @@ export const firebaseConfig = {
     ForgotPasswordPage
    
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData]
 })
 export class AppModule {}
