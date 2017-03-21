@@ -20,14 +20,12 @@ export class LoginPage{
     signUpPage: any;
     forgotPasswordPage: any;
 
-    fblogin: any;
     loginEmailForm: FormGroup;
     loading: any;
 
     submitAttempt: boolean = false;
 
     constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public facebookAuth: FacebookAuth, public authData: AuthData, public alertCtrl:AlertController, public loadingCtrl:LoadingController){
-        this.fblogin = facebookAuth;
         this.loginEmailForm = formBuilder.group({
             email: ['',Validators.compose([Validators.maxLength(30),Validators.pattern("^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"),Validators.required])],
             password: ['',Validators.compose([Validators.maxLength(30),Validators.pattern('[a-zA-z0-9]*'),Validators.required])]
@@ -45,11 +43,11 @@ export class LoginPage{
 
     onSubmit(infoData){
         this.submitAttempt = true;
-        this.loginWithEmail();
+        // this.loginWithEmail();
     }
 
     loginWithFacebook(){
-        this.fblogin.loginWithFacebook();
+        this.facebookAuth.loginWithFacebook();
     }
 
     loginWithEmail(){
