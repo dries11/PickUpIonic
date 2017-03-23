@@ -11,7 +11,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-searchview-map',
   templateUrl: 'searchview-map.html'
 })
-export class SearchviewMapPage {
+export class SearchViewMapPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

@@ -11,7 +11,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-creategame',
   templateUrl: 'creategame.html'
 })
-export class CreategamePage {
+export class CreateGamePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

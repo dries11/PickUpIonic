@@ -11,7 +11,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-gameview-admin',
   templateUrl: 'gameview-admin.html'
 })
-export class GameviewAdminPage {
+export class GameViewAdminPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 

@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import { AuthData } from '../../services/auth/auth';
 
 import { LoginPage } from '../auth/login/login';
+import { SettingsPage } from '../settings/settings';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +21,14 @@ export class HomePage {
   logoutUser(){
     this.authData.logoutUser();
     this.navCtrl.setRoot(LoginPage);
+  }
+
+  toSettingsPage(){
+    this.navCtrl.push(SettingsPage);
+  }
+
+  toProfilePage(){
+    this.navCtrl.push(ProfilePage);
   }
 
 }
