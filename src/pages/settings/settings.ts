@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { AuthData } from '../../services/auth/auth';
 
-/*
-  Generated class for the Settings page.
+import { LoginPage } from '../auth/login/login';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public authData:AuthData) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
+  logoutUser(){
+    this.authData.logoutUser();
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
