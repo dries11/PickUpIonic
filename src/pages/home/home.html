@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar color="light-gray">
     <ion-title>
       PickUp
     </ion-title>
@@ -16,6 +16,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="page">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center; padding: 10px;">
+        <button ion-button icon-left color="light-gray" style="border: 2px solid black; height: 25px;" round (click)="toCreateGamePage()">
+        <ion-icon name="add"></ion-icon>
+        Create A New PickUP!
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <div class="imageButtons" tappable (click)="toSearchViewList('Basketball')">
+          <img src="../../assets/images/basketball-icons/DriveBy-Left.png">
+        </div>
+      </ion-col>
+      <ion-col width-50>
+        <div class="imageButtons" tappable (click)="toSearchViewList('Soccer')">
+          <img src="../../assets/images/soccer-icons/RightStrike.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <button ion-button color="danger" (click)="logoutUser()">Logout</button>
 </ion-content>

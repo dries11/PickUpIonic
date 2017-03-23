@@ -6,6 +6,7 @@ import { AuthData } from '../../services/auth/auth';
 import { LoginPage } from '../auth/login/login';
 import { SettingsPage } from '../settings/settings';
 import { ProfilePage } from '../profile/profile';
+import { CreateGamePage } from '../creategame/creategame';
 
 @Component({
   selector: 'page-home',
@@ -29,6 +30,10 @@ export class HomePage {
 
   toProfilePage(){
     this.navCtrl.push(ProfilePage);
+  }
+
+  toCreateGamePage(){
+    this.navCtrl.push(CreateGamePage);
   }
 
 }
