@@ -10,7 +10,6 @@ export class FacebookAuth{
 
     loginWithFacebook(){
         Facebook.login(['email']).then((response) => {
-            console.log(response);
             let credentials = firebase.auth.FacebookAuthProvider.credential(response.authResponse.accessToken);
             let providerConfig = {
                 provider: AuthProviders.Facebook,
@@ -19,13 +18,9 @@ export class FacebookAuth{
                 scope: ['email']
             };
             this.angularFire.auth.login(credentials, providerConfig).then((success) => {
-                console.log("Firebase Success: " + JSON.stringify(success));
-                alert(JSON.stringify(success));
+                return true;
             }).catch((error) => {
-                console.log("Firebase Error: " + JSON.stringify(error));
-                alert(JSON.stringify(error));
             }).catch((error) => {
-                console.log(error);
             })
         });
     }

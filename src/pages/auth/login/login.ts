@@ -43,11 +43,15 @@ export class LoginPage{
 
     onSubmit(infoData){
         this.submitAttempt = true;
-        // this.loginWithEmail();
+        this.loginWithEmail();
     }
 
     loginWithFacebook(){
-        this.facebookAuth.loginWithFacebook();
+        let didLogin = this.facebookAuth.loginWithFacebook();
+        alert(didLogin);
+        if(didLogin){
+            this.navCtrl.setRoot(HomePage);
+        }
     }
 
     loginWithEmail(){
