@@ -6,6 +6,14 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
 import { SignUpPage } from '../pages/auth/signup/signup';
 import { ForgotPasswordPage } from '../pages/auth/forgotpassword/forgotpassword';
+import { CreateGamePage } from '../pages/creategame/creategame';
+import { GameViewAdminPage } from '../pages/gameview/gameview-admin/gameview-admin';
+import { GameViewUserPage } from '../pages/gameview/gameview-user/gameview-user';
+import { ProfilePage } from '../pages/profile/profile';
+import { SearchViewListPage } from '../pages/searchview/searchview-list/searchview-list';
+import { SearchViewMapPage } from '../pages/searchview/searchview-map/searchview-map';
+import { SettingsPage } from '../pages/settings/settings';
+
 
 import { AuthData } from '../services/auth/auth';
 import { FacebookAuth } from '../services/auth/facebook';
@@ -25,8 +33,14 @@ export const firebaseConfig = {
     HomePage,
     LoginPage,
     SignUpPage,
-    ForgotPasswordPage
-    
+    ForgotPasswordPage,
+    CreateGamePage,
+    GameViewAdminPage,
+    GameViewUserPage,
+    ProfilePage,
+    SearchViewListPage,
+    SearchViewMapPage,
+    SettingsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -38,8 +52,14 @@ export const firebaseConfig = {
     HomePage,
     LoginPage,
     SignUpPage,
-    ForgotPasswordPage
-   
+    ForgotPasswordPage,
+    CreateGamePage,
+    GameViewAdminPage,
+    GameViewUserPage,
+    ProfilePage,
+    SearchViewListPage,
+    SearchViewMapPage,
+    SettingsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData]
 })
