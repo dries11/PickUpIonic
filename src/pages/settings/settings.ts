@@ -10,6 +10,8 @@ import { LoginPage } from '../auth/login/login';
 })
 export class SettingsPage {
 
+  notificationsOn: boolean;
+
   constructor(public navCtrl: NavController, public authData:AuthData) {}
 
   logoutUser(){

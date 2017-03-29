@@ -1,0 +1,33 @@
+{
+        "type" : "Basketball Game",
+        
+        "location" : 
+            {
+                "latitude" : 39.796889,
+                "logitude" : -75.523352
+            },
+        "schedule" :
+            {
+                "date" : "08/16/2017",
+                "time" : "17:00"
+            },
+        "numberOfPlayers" :
+            {
+                "total" : 20,
+                "signedUp" : 4
+            },
+        "listOfSupplies" :[
+            {
+                "name" : "Basketball",
+                "amount" : 3
+            },
+            {
+                "name" : "Water Bottles",
+                "amount" : 15
+            },
+            {
+                "name" : "Pinnies",
+                "amount" : 20
+            }
+        ]
+    }

@@ -1,10 +1,25 @@
 <ion-header>
   <ion-navbar color="light-gray">
-    <ion-title>Settings</ion-title>
+    <ion-title>
+      Settings
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content class="page">
+
+  <ion-list>
+      <button ion-button icon-right full color="dark-gray">
+        <h3>Privacy</h3>
+        <ion-icon name="albums"></ion-icon>
+      </button>
+    <ion-item color="light-gray">
+      <ion-label>Notifications On/Off</ion-label>
+      <ion-toggle [(ngModel)]="notificationsOn" color="secondary"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
   <button ion-button full color="danger" (click)="logoutUser()">Logout</button>
 </ion-content>

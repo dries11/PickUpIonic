@@ -18,6 +18,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { AuthData } from '../services/auth/auth';
 import { FacebookAuth } from '../services/auth/facebook';
 import { AngularFireModule } from 'angularfire2';
+import { Geolocation } from '@ionic-native/geolocation';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyB0Bo1Q8njukDF9PCzSsHwtAqpGRBUvxQw",
@@ -61,6 +62,6 @@ export const firebaseConfig = {
     SearchViewMapPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData, Geolocation]
 })
 export class AppModule {}

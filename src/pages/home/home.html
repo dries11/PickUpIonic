@@ -1,9 +1,9 @@
 <ion-header style="border: 2px 0px 0px 0px solid black">
   <ion-navbar color="light-gray">
-    <ion-title>
+    <ion-title style="text-align: center;">
       PickUp
     </ion-title>
-    <ion-buttons start>
+    <ion-buttons left>
       <button ion-button clear icon-only (click)="toSettingsPage()">
         <ion-icon name="cog"></ion-icon>
       </button>
@@ -32,13 +32,13 @@
   <ion-grid style="margin-top: 25px">
     <ion-row>
       <ion-col width-50>
-        <div class="imageButtons" tappable (click)="toSearchViewList('Basketball')">
-          <img src="../../assets/images/basketball-icons/DriveBy-Left.png">
+        <div class="imageButtons" tappable (click)="toSearchViewList('BasketballGames')">
+          <img src="assets/images/basketball-icons/DriveBy-Left.png">
         </div>
       </ion-col>
       <ion-col width-50>
-        <div class="imageButtons" tappable (click)="toSearchViewList('Soccer')">
-          <img src="../../assets/images/soccer-icons/RightStrike.png">
+        <div class="imageButtons" tappable (click)="toSearchViewList('SoccerGames')">
+          <img src="assets/images/soccer-icons/RightStrike.png">
         </div>
       </ion-col>
     </ion-row>

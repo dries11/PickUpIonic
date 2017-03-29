@@ -2,6 +2,13 @@
 // http://ionicframework.com/docs/v2/theming/
 $font-path: "../assets/fonts";
 
+@font-face{
+  font-family: 'slant';
+  src: local('slant'), url('../assets/fonts/SLANT.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "ionic.globals";
 
 
@@ -30,6 +37,7 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   light-gray: lightgray,
+  dark-gray: darkgray,
 );
 
 
