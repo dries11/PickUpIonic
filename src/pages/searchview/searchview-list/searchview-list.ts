@@ -55,7 +55,7 @@ export class SearchViewListPage {
     this.games.forEach((game) => {
       for(var i = 0; i < game.length; i++){
         let mapElement = document.getElementById(game[i].$key);
-
+        console.log(mapElement);
         console.log(game[i]);
 
         let latLng = new google.maps.LatLng(game[i].location.latitude, game[i].location.longitude);
@@ -71,7 +71,7 @@ export class SearchViewListPage {
         };
 
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
+        
         var marker = new google.maps.Marker({
           map: this.map,
           draggable: false,
