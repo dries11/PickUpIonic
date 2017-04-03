@@ -19,11 +19,15 @@ export class SearchViewMapPage {
 
   games: FirebaseListObservable<any>;
   gameType: String;
+  searchInfo: any;
+  skillLevel: any = "Beginner";
   markerLatLng: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation, public angularFire: AngularFire) {
-    this.gameType = navParams.data;
-    this.games = angularFire.database.list('/games/' + this.gameType);
+    this.searchInfo = navParams.data;
+    this.gameType = this.searchInfo.gameType;
+    this.skillLevel = this.searchInfo.skillLevel;
+    this.games = angularFire.database.list('/games/' + this.gameType + "/" + this.skillLevel);
   }
 
   ionViewDidLoad() {
@@ -46,16 +50,24 @@ export class SearchViewMapPage {
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     }, (error) => {
       alert("Error!");
-    });
-
-    this.games.forEach((game) => {
-      let latlng = new google.maps.LatLng(game[0].location.latitude, game[0].location.longitude);
-      var marker = new google.maps.Marker({
-        map: this.map,
-        draggable: false,
-        position: latlng
+    }).then(() => {
+        this.games.forEach((game) => {
+          for(var i = 0; i < game.length; i++){
+            let latlng = new google.maps.LatLng(game[i].location.latitude, game[i].location.longitude);
+            var marker = new google.maps.Marker({
+              map: this.map,
+              draggable: false,
+              position: latlng,
+              title: game[i].type
+            });
+            var infowindow = new google.maps.InfoWindow({
+              content: game[i].type
+            });
+            marker.addListener('click', function(){
+              infowindow.open(this.map, marker);
+            });
+          }
       });
-      marker.setMap(this.map);
     });
   }
 
@@ -64,7 +76,13 @@ export class SearchViewMapPage {
   }
 
   changeGames(){
-    this.games = this.angularFire.database.list('/games/' + this.gameType);
+    this.games = this.angularFire.database.list('/games/' + this.gameType + "/" + this.skillLevel);
+    this.initMap();
+  }
+
+  changeSkillLevel(){
+    this.games = this.angularFire.database.list('/games/' + this.gameType + "/" + this.skillLevel);
+    this.initMap();
   }
 
 }

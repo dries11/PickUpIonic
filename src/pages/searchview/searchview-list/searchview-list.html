@@ -1,7 +1,7 @@
 <ion-header class="all">
   <ion-navbar color="light-gray">
     <ion-title>
-    <ion-searchbar (ionInput)="searchZipCode($event)" placeholder="Current Location"></ion-searchbar>
+      List View
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="toSearchViewMap()" clear icon-only>
@@ -21,14 +21,14 @@
     </ion-segment>
   </ion-toolbar>
   <ion-toolbar no-border-top color="light-gray">
-    <ion-segment [(ngModel)]="skillLevel">
-      <ion-segment-button value="beginner">
+    <ion-segment [(ngModel)]="skillLevel" (ionChange)="changeGames()">
+      <ion-segment-button value="Beginner">
         Beginner
       </ion-segment-button>
-      <ion-segment-button value="intermediate">
+      <ion-segment-button value="Intermediate">
         Intermediate
       </ion-segment-button>
-      <ion-segment-button value="advanced">
+      <ion-segment-button value="Advanced">
         Advanced
       </ion-segment-button>
     </ion-segment>
@@ -37,12 +37,29 @@
 
 
 <ion-content padding class="page">
-  <ion-card *ngFor="let game of games | async" class="gameCards">
-    <ion-card-header style="text-align: center">
-      {{game.type}}
-    </ion-card-header>
-    <ion-card-content>
-      {{game.schedule.date}} @ {{game.schedule.time}}
-    </ion-card-content>
-  </ion-card>
+  <div *ngFor="let game of games | async" tappable>
+    <ion-card class="gameCards">
+      <ion-card-content style="padding: 0px 0px 0px 0px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col style="text-align: left">
+              <ion-icon left name="navigate"></ion-icon> : DISTANCE
+            </ion-col>
+            <ion-col style="text-align: right">
+              <ion-icon left name="person"></ion-icon> : {{game.numberOfPlayers.signedUp}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col style="text-align: left">
+              <ion-icon left name="calendar"></ion-icon> : {{game.schedule.date}} @ {{game.schedule.time}}
+            </ion-col>
+            <ion-col style="text-align: right">
+              <ion-icon left name="sunny"></ion-icon> : WEATHER
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div #map id="{{game.$key}}" style="height: 150px"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

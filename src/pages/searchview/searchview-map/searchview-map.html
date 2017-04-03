@@ -1,7 +1,7 @@
 <ion-header class="all">
   <ion-navbar color="light-gray">
     <ion-title>
-      <ion-searchbar (ionInput)="searchZipCode($event)" placeholder="Current Location"></ion-searchbar>
+      Map View
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)="toSearchViewList()" clear icon-only>
@@ -21,14 +21,14 @@
     </ion-segment>
   </ion-toolbar>
   <ion-toolbar no-border-top color="light-gray">
-    <ion-segment [(ngModel)]="skillLevel">
-      <ion-segment-button value="beginner">
+    <ion-segment [(ngModel)]="skillLevel" (ionChange)="changeSkillLevel()">
+      <ion-segment-button value="Beginner">
         Beginner
       </ion-segment-button>
-      <ion-segment-button value="intermediate">
+      <ion-segment-button value="Intermediate">
         Intermediate
       </ion-segment-button>
-      <ion-segment-button value="advanced">
+      <ion-segment-button value="Advanced">
         Advanced
       </ion-segment-button>
     </ion-segment>
@@ -36,4 +36,6 @@
 
 </ion-header>
 
-<div #map id="map"></div>
+<ion-content>
+  <div #map id="map"></div>
+</ion-content>
