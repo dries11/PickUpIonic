@@ -1,6 +1,10 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
@@ -44,8 +48,10 @@ export const firebaseConfig = {
     SettingsPage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,6 +68,6 @@ export const firebaseConfig = {
     SearchViewMapPage,
     SettingsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData, Geolocation]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, FacebookAuth, AuthData, Geolocation, StatusBar, SplashScreen]
 })
 export class AppModule {}
